@@ -1,0 +1,26 @@
+{
+  "name": "crud-api-missoes-espaciais",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofidocx/crud-api-missoes-espaciais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sofidocx/crud-api-missoes-espaciais/issues"
+  },
+  "homepage": "https://github.com/sofidocx/crud-api-missoes-espaciais#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "sqlite3": "^5.1.7"
+  }
+}

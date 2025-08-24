@@ -13,5 +13,7 @@ router.post('/missions', missionController.createMisison);
 router.get('/missions', missionController.getMission); 
 //rota para pegar missões por ID
 router.get('/missions/:id', missionController.getMissionById); 
+//rota para atualizar uma missão por ID 
+router.put('/missions/:id', missionController.updateMission); 
 
 module.exports = router; 

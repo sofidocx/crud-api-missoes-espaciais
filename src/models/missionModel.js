@@ -14,3 +14,17 @@ exports.createMission = (missionData, callback) => {
     });
 };
 
+exports.getMission = (callback) => {
+
+    const sql = `SELECT * FROM missions`; 
+    db.all(sql, [], (err, rows) => {
+        callback(err,rows); 
+    });    
+};
+
+exports.getMissionById = (id, callback) => {
+    const sql = `SELECT * FROM missions WHERE id = ?`; 
+    db.get(sql, [id], (err,row) => {
+        callback(err, row); 
+    });
+};

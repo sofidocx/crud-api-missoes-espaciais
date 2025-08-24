@@ -2,6 +2,7 @@
 
 const missionModel = require('../models/missionModel'); 
 
+
 exports.createMisison = (req, res) => {
     const missionData = req.body; 
 
@@ -11,6 +12,32 @@ exports.createMisison = (req, res) => {
             res.status(500).send('Erro ao tentar adicionar nova missão'); 
         }else{
             res.status(201).json({id: missionId, message: 'Missão criada com sucesso'});
+        }
+    });
+};
+
+
+exports.getMission = (req, res) => {
+    missionModel.getMission((err, missions) => {
+        if(err){
+            console.error(err.message); 
+            res.status(500).send('Erro ao buscar as missões'); 
+        }else{
+            res.status(200).json(missions); 
+        }
+    });
+};
+
+exports.getMissionById = (req, res) => {
+    const id = req.params.id;
+    missionModel.getMissionById(id, (err, mission) => {
+        if(err) {
+            console.error(err.message); 
+            res.status(500).send('Erro ao tentar buscar missão por ID'); 
+        }else if (mission) {
+            res.status(200).json(mission);
+        }else{
+            res.status(404).send('Missão não encontrada'); 
         }
     });
 };

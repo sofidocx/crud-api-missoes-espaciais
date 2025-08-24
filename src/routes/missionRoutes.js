@@ -9,5 +9,9 @@ router.get('/', (req, res) => {
 
 //rota para a criação de missões 
 router.post('/missions', missionController.createMisison); 
+//rota para pegar todas as missões
+router.get('/missions', missionController.getMission); 
+//rota para pegar missões por ID
+router.get('/missions/:id', missionController.getMissionById); 
 
 module.exports = router; 

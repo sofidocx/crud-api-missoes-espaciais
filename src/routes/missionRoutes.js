@@ -15,5 +15,7 @@ router.get('/missions', missionController.getMission);
 router.get('/missions/:id', missionController.getMissionById); 
 //rota para atualizar uma missão por ID 
 router.put('/missions/:id', missionController.updateMission); 
+//rota para deletar uma missão, por ID 
+router.delete('/missions/:id', missionController.deleteMission); 
 
 module.exports = router; 

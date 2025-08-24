@@ -57,4 +57,19 @@ exports.updateMission = (req, res) => {
             res.status(404).json({ message: 'A missão não foi encontrada'}); 
         }
     })
-}
+}; 
+
+exports.deleteMission = (req, res) => {
+    const id = req.params.id; 
+
+    missionModel.deleteMission(id, (err, changes) => {
+        if(err) {
+            console.error(err.mesasage); 
+            res.status(500).send( 'Erro ao tentar deletar a missão');
+        }else if (changes > 0) {
+            res.status(200).send( 'A missão foi deletada com sucesso');
+        }else{
+            res.status(404).send('A missão não foi encontrada'); 
+        }
+    });
+};
